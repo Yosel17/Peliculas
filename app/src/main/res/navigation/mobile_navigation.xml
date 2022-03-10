@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="cursos.aprender.peliculas.navdrawer.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="cursos.aprender.peliculas.navdrawer.ui.Later.LaterFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_later" >
+        <action
+            android:id="@+id/action_nav_gallery_to_movieDetailFragment2"
+            app:destination="@id/movieDetailFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="cursos.aprender.peliculas.navdrawer.ui.favorite.FavoriteFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_nav_slideshow_to_movieDetailFragment2"
+            app:destination="@id/movieDetailFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailFragment2"
+        android:name="cursos.aprender.peliculas.ui.moviedetails.MovieDetailFragment"
+        android:label="Detalle"
+        tools:layout="@layout/fragment_movie_detail">
+        <argument
+            android:name="posterImageUrl"
+            app:argType="string" />
+        <argument
+            android:name="backgroundImageUrl"
+            app:argType="string" />
+        <argument
+            android:name="voteAverage"
+            app:argType="float" />
+        <argument
+            android:name="voteCount"
+            app:argType="integer" />
+        <argument
+            android:name="overview"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="language"
+            app:argType="string" />
+        <argument
+            android:name="releaseDate"
+            app:argType="string" />
+    </fragment>
+</navigation>
